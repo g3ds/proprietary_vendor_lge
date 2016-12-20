@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter g3 g3ds d850 d851 d852 d855 ls990 vs985 f400,$(TARGET_DEVICE)),)
+ifneq ($(filter g3 d850 d851 d852 d855 ls990 vs985 f400,$(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff
@@ -30,9 +30,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := TimeService
+LOCAL_MODULE := shutdownlistener
 LOCAL_MODULE_OWNER := lge
-LOCAL_SRC_FILES := proprietary/app/TimeService/TimeService.apk
+LOCAL_SRC_FILES := proprietary/app/shutdownlistener/shutdownlistener.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -41,9 +41,9 @@ LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := shutdownlistener
+LOCAL_MODULE := TimeService
 LOCAL_MODULE_OWNER := lge
-LOCAL_SRC_FILES := proprietary/app/shutdownlistener/shutdownlistener.apk
+LOCAL_SRC_FILES := proprietary/app/TimeService/TimeService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
